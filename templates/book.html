@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="holder" style="display: flex; justify-content: space-evenly">
+    <img src="{{ book.cover.url }}" alt="Book cover" style="width: 200px; height: auto; object-fit: cover">
+    <div class="data">
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.price }}₸</p>
+        <p>{{ book.author }}</p>
+        <p>{{ book.description }}</p>
+    </div>
+</div>
+<div class="buttons">
+    <a href="{% url 'update' book.id %}">Изменить</a>
+    <a href="{% url 'delete' book.id %}">Удалить</a>
+</div>
+
+{% endblock %}
